@@ -1,7 +1,7 @@
 import requests
 
 URL = 'https://api.pokemonbattle.ru/v2'
-HEADERS = {'Content-Type':'application/json', 'trainer_token' : '006bec7e9901754d36a7482a66d2e7bd'}
+HEADERS = {'Content-Type':'application/json', 'trainer_token' : 'TRAINER_TOKEN'} # Указать токен тренера
 
 body_create_pokemon = {
     "name": "Тирмазавр",
@@ -9,20 +9,21 @@ body_create_pokemon = {
 }
 
 body_rename_pokemon = {
-    "pokemon_id": "405321",
+    "pokemon_id": "POKEMON_ID", # Указать pokemon_id своего покемона
     "name": "Бублик",
     "photo_id": 576
 }
 
 body_add_pokeball = {
-    "pokemon_id": "405323"
+    "pokemon_id": "POKEMON_ID" # Указать pokemon_id своего покемона
 }
 
-# create_pokemon = requests.post(url=f'{URL}/pokemons', headers=HEADERS, json=body_create_pokemon)
+# Можно использовать любой запрос:
+# create_pokemon = requests.post(url=f'{URL}/pokemons', headers=HEADERS, json=body_create_pokemon) 
 # print(create_pokemon.text)
 
 # rename_pokemon = requests.put(url=f'{URL}/pokemons', headers=HEADERS, json=body_rename_pokemon)
 # print(rename_pokemon.text)
-
-add_pokeball = requests.post(url=f'{URL}/trainers/add_pokeball', headers=HEADERS, json=body_add_pokeball)
-print(add_pokeball.text)
+ 
+# add_pokeball = requests.post(url=f'{URL}/trainers/add_pokeball', headers=HEADERS, json=body_add_pokeball)
+# print(add_pokeball.text)
