@@ -1,16 +1,22 @@
 import requests
 
 URL = 'https://api.pokemonbattle.ru/v2'
-HEADERS = {'Content-Type':'application/json', 'trainer_token' : 'TRAINER_TOKEN'} # Указать токен тренера
+TOKEN = 'USER_TOKEN'
+HEADERS = {'Content-Type':'application/json', 'trainer_token' : TOKEN} # Указать токен тренера
+body_registration= {
+    "trainer_token": TOKEN,
+    "email": "USER_LOGIN",
+    "password": "USER_PASSWORD"
+}
 
 body_create_pokemon = {
-    "name": "Тирмазавр",
+    "name": "POKEMON_NAME",
     "photo_id": 298
 }
 
 body_rename_pokemon = {
     "pokemon_id": "POKEMON_ID", # Указать pokemon_id своего покемона
-    "name": "Бублик",
+    "name": "NEW NAME",
     "photo_id": 576
 }
 
@@ -19,6 +25,13 @@ body_add_pokeball = {
 }
 
 # Можно использовать любой запрос:
+
+# registration = requests.post(url = f'{URL}/trainers/reg',headers = HEADERS,json = body_registration)
+# print(registration.text)
+
+# response_confirmation = requests.post(url = f'{URL}/trainers/confirm_email',headers = HEADERS,json = body_confirmation)
+# print(response_confirmation.text)
+
 # create_pokemon = requests.post(url=f'{URL}/pokemons', headers=HEADERS, json=body_create_pokemon) 
 # print(create_pokemon.text)
 
