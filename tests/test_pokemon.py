@@ -3,8 +3,9 @@ import pytest
 
 
 URL = 'https://api.pokemonbattle.ru/v2'
+TOKEN = 'USER_TOKEN'
 HEADERS = {'Content-Type': 'application/json',
-           'trainer_token': 'TOKEN'}    # Вставить свой токен
+           'trainer_token': TOKEN}    # Вставить свой токен
 TRAINER_ID = 'TRAINER_ID' #Вставить свой trainer_id
 
 
